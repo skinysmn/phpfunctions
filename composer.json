@@ -18,6 +18,20 @@
     },
     "minimum-stability": "dev-master",
     "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Extension\\levin\\phpfunctions\\": "src",
+            "League\\Event\\": "lib/League/Event",
+            "League\\OAuth2\\Client\\": "lib/League/OAuth2/Client/",
+            "Stevenmaguire\\OAuth2\\Client\\": "lib/League/OAuth2/Client/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bolt\\Extension\\levin\\filesize\\Tests\\": "tests",
+            "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
+        }
+    },
     "extra": {
         "bolt-assets": "web",
         "bolt-class": "Bolt\\Extension\\levin\\phpfunctions\\phpfunctionsExtension"

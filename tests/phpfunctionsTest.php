@@ -1,15 +1,15 @@
 <?php
 
-namespace Bolt\Extension\levin\filesize\Tests;
+namespace Bolt\Extension\levin\phpfunctions\Tests;
 
 use Bolt\Tests\BoltUnitTest;
-use Bolt\Extension\levin\filesize\Extension;
+use Bolt\Extension\levin\phpfunctions\Extension;
 
 /**
  * Ensure that the ExtensionName extension loads correctly.
  *
  */
-class filesizeTest extends BoltUnitTest
+class phpfunctionsTest extends BoltUnitTest
 {
     public function testExtensionLoads()
     {

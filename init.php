@@ -1,4 +1,4 @@
-namespace Bolt\Extensions\levin\filesize;
+namespace Bolt\Extensions\levin\phpfunctions;
 
 if (isset($app)) {
     $app['extensions']->register(new Extension($app));

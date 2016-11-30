@@ -16,14 +16,9 @@
             "email": "oleg_levin@mail.ru"
         }
     ],
-    "minimum-stability": "dev-master",
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Bolt\\Extension\\levin\\phpfunctions\\": "src",
-            "League\\Event\\": "lib/League/Event",
-            "League\\OAuth2\\Client\\": "lib/League/OAuth2/Client/",
-            "Stevenmaguire\\OAuth2\\Client\\": "lib/League/OAuth2/Client/"
         }
     },
     "autoload-dev": {

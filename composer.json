@@ -16,6 +16,8 @@
             "email": "oleg_levin@mail.ru"
         }
     ],
+    "minimum-stability": "beta",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Bolt\\Extension\\levin\\phpfunctions\\": "src"

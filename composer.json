@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\levin\\phpfunctions\\": "src",
+            "Bolt\\Extension\\levin\\phpfunctions\\": "src"
         }
     },
     "autoload-dev": {

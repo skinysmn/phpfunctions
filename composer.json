@@ -1,0 +1,23 @@
+{
+    "name": "levin/phpfunctions",
+    "description": "PHP functions to twig filters and functions",
+    "type": "bolt-extension",
+    "require": {
+        "bolt/bolt": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "Oleg Levin",
+            "email": "oleg_levin@mail.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Extension\\levin\\phpfunctions\\": "src/"
+        }
+    },
+    "extra": {
+        "bolt-assets": "web",
+        "bolt-class": "Bolt\\Extension\\levin\\phpfunctions\\phpfunctionsExtension"
+    }
+}

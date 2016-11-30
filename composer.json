@@ -1,9 +1,14 @@
 {
     "name": "levin/phpfunctions",
-    "description": "PHP functions to twig filters and functions",
+    "description": "Some php functions to twig filters and functions",
     "type": "bolt-extension",
+    "keywords": ["php", "twig", "extension", "twig functions", "video preview"
+    ],
     "require": {
         "bolt/bolt": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7"
     },
     "authors": [
         {
@@ -11,11 +16,6 @@
             "email": "oleg_levin@mail.ru"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Bolt\\Extension\\levin\\phpfunctions\\": "src/"
-        }
-    },
     "minimum-stability": "dev-master",
     "prefer-stable": true,
     "autoload": {
@@ -28,12 +28,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Bolt\\Extension\\levin\\filesize\\Tests\\": "tests",
+            "Bolt\\Extension\\levin\\phpfunctions\\Tests\\": "tests",
             "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
         }
     },
-    "extra": {
-        "bolt-assets": "web",
+        "extra": {
+        "bolt-icon": "",
         "bolt-class": "Bolt\\Extension\\levin\\phpfunctions\\phpfunctionsExtension"
     }
 }

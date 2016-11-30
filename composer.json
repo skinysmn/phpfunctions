@@ -16,7 +16,7 @@
             "Bolt\\Extension\\levin\\phpfunctions\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev-master",
     "prefer-stable": true,
     "extra": {
         "bolt-assets": "web",

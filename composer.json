@@ -16,7 +16,7 @@
             "email": "oleg_levin@mail.ru"
         }
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {

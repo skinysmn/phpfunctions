@@ -13,6 +13,7 @@ class phpfunctionsExtension extends SimpleExtension {
 	    'array_rand' => 'TwigArrayrand',
 	    'str_replace' => 'TwigStrreplace',
 	    'videoinfo' => 'twigVideoinfo',
+	    'pdfpre' => 'pdfpre'
 	];
     }
 
@@ -27,12 +28,12 @@ class phpfunctionsExtension extends SimpleExtension {
 
 	if (file_exists($_SERVER['DOCUMENT_ROOT'] . $file)) {
 	    $bytes = filesize($_SERVER['DOCUMENT_ROOT'] . $file);
-	    $units = array('b', 'Kb', 'Mb', 'Gb', 'Tb');
+	    $units = array('байт', 'Кбайт', 'Мбайт', 'Гбайт', 'Tb');
 	    $bytes = max($bytes, 0);
 	    $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
 	    $pow = min($pow, count($units) - 1);
 	    $bytes /= pow(1024, $pow);
-	    $size = round($bytes, '2') . ' ' . $units[$pow];
+	    $size = round($bytes, '1') . ' ' . $units[$pow];
 
 	    return new \Twig_Markup($size, 'UTF-8');
 	}
@@ -65,9 +66,32 @@ class phpfunctionsExtension extends SimpleExtension {
 	return $str;
     }
 
-  public function twigVideoinfo($link) {
+    public function twigVideoinfo($link) {
 	$v = new VideoThumb($link);
 	$html = $v->getImage;
+	return new \Twig_Markup($html, 'UTF-8');
+    }
+
+    public function pdfpre($file = "", $width = 100, $height = 0) {
+$app = $this->getContainer();
+	$thumb_path = $app['resources']->getPath('webpath') . '/thumbs/pdfpre/' ;
+	if (!is_dir($thumb_path)) {
+	    mkdir($thumb_path, 0777);
+	}
+
+	$path_parts = pathinfo($app['resources']->getPath('filespath'). $file);
+	$filename = $path_parts['filename'];
+	$filepath = $path_parts['dirname'];
+
+	if (!file_exists($thumb_path . $filename . '.jpg')) {
+	    exec('convert "' . $app['resources']->getPath('filespath') . '/' . $file . '[0]" -colorspace RGB -density 300 -quality 95 -background white -alpha remove -geometry ' . $width . ' -border 2x2 -bordercolor "#efefef" ' . $thumb_path . $filename . '.jpg');
+	}
+
+	$html = <<< EOM
+        <img src="%src%" alt="%alt%"> 
+EOM;
+	$html = str_replace("%src%", '/thumbs/pdfpre/' . $filename . '.jpg', $html);
+	$html = str_replace("%alt%", $filename, $html); 
 	return new \Twig_Markup($html, 'UTF-8');
     }
 

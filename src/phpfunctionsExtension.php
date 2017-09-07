@@ -13,7 +13,8 @@ class phpfunctionsExtension extends SimpleExtension {
 	    'array_rand' => 'TwigArrayrand',
 	    'str_replace' => 'TwigStrreplace',
 	    'videoinfo' => 'twigVideoinfo',
-	    'pdfpre' => 'pdfpre'
+	    'pdfpre' => 'pdfpre',
+	    'imagesize' => 'twigImagesize'
 	];
     }
 
@@ -94,5 +95,20 @@ EOM;
 	$html = str_replace("%alt%", $filename, $html); 
 	return new \Twig_Markup($html, 'UTF-8');
     }
+	   public function twigImagesize($img)
+	{
+		if (trim($img) <> ''){
+			$width = getimagesize($_SERVER['DOCUMENT_ROOT']."/files/".$img);
+			if ($width[0] > 250 ){
+				$html .= '<a class="newsimg showpopup" href="/files/'.$img.'"><img src="/files/'.$img.'" alt=""/></a>';
+			}else{
+				$html .= '<a class="newsimg"><img src="/files/'.$img.'" alt=""/></a>';
+			}
+		}else{
+			$html = " ";
+		}
+			return new \Twig_Markup($html, 'UTF-8');
+
+	}
 
 }

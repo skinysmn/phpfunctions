@@ -2,7 +2,7 @@
     "name": "levin/phpfunctions",
     "description": "Some php functions to twig filters and functions",
     "type": "bolt-extension",
-    "keywords": ["php", "twig", "extension", "twig functions", "video preview", "pdf preview"
+    "keywords": ["php", "twig", "extension", "twig functions", "video preview", "pdf preview", "calendar", "server array", "$_server", "random array", "randomize array","str_replace", "string replace","shuffle","url decode" 
     ],
     "require": {
         "bolt/bolt": "^3.0"

@@ -7,7 +7,7 @@ functions
 {{ filesize(file) }} returns filesize  
 {{ videoinfo(videolink) }} returns preview image from youtube videolink  
 {{ pdfpre(pdffilename, width, height) }} returns image with pdf preview of 1st page (thanks to pdfPreview by blockmurder for Bolt 2)  
-{{ calendar(month, year, day) }} returns calendar table, today by default
+{{ calendar(month, year, day) }} returns calendar table, today by default  
 {{ server(param) }} same as $_SERVER[param]
 
 
